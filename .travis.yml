@@ -7,3 +7,11 @@ before_install:
 
 script:
   - docker run flast1k/docker-react npm run test -- --watchAll=false --coverage
+
+deploy:
+  provider: Heroku
+  api_key:
+    secure: $HEROKU_ACCESS_KEY
+  app: docker-react-project
+  on:
+    branch: master
